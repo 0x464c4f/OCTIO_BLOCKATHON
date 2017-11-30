@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Octio - Revolutionise The Auction System</title>
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min2.css">
+    <link rel="stylesheet" href="bootstrap/css/ours.css?v=3">
+
+
+
+</head>
+<body>
+<nav class="navbar navbar-toggleable-xl  navbar-light bg-faded navbar-expand">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#"><img src="Images/header_logo.png" height="23" width="149"/></a>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav navbar-left">
+          <li class="nav-item active">
+               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Archive</a>
+           </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">FAQ</a>
+            </li>
+        </ul>
+
+    </div>
+    <form class="form-inline my-2 my-lg-0 navbar-right special">
+        <a class="nav-link" href="#">OCTokens: <span id="amountTokens" > 0</span></a>
+    </form>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+            <div class="jumbotron text-center">
+            <h1>iPhone <strong>X</strong></h1>
+
+            <img src="Images/iphonex.png" height="378" width="471"/>
+            <div>
+            <button type="button" class="btn btn-success"  data-toggle="modal" data-target="#exampleModal">Place Bid</button>
+
+            <dl class="dl-horizontal" style="position: relative; top:20px;">
+            <dt>Countdown</dt>
+            <strong><dd class="text-danger blink_me"> <span id="hour"></span>h <span id="minute"></span>m <span id="second"></span>s</dd></strong>
+            <dt>Actual Value</dt>
+            <dd>$1579</dd>
+            <dt>Minimum Bid:</dt>
+            <dd>1 Token </dd>
+            </dl>
+            </div>
+        </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+            <div class="jumbotron text-center">
+                <h1><strong>Dji</strong> Mavic Pro</h1>
+
+                <img src="Images/sold_mavic.png" height="378" width="378"/>
+                <div>
+                    <button type="button" id="showBids" class="btn btn-primary">Show Bids</button>
+
+                    <dl class="dl-horizontal" style="position: relative; top:20px;">
+                        <dt>Countdown</dt>
+                        <dd class="text-danger">0h 0m 0s</dd>
+                        <dt>Actual Value</dt>
+                        <dd>$999</dd>
+                        <dt>Minimum Bid:</dt>
+                        <dd>1 Token </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Place Bid (1 Token)</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="recipient-name" class="form-control-label">Value:</label>
+                        <input type="text" class="form-control" id="recipient-name" placeholder="0.01">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button id="sendButton" type="button" class="btn btn-primary">Send message</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="successModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Success</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Your bid was successful placed. Best of luck!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Yaay</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="verifyModal">
+    <div class="modal-dialog modal-lg"  role="document">
+        <div class="modal-content" >
+            <div class="modal-header">
+                <h5 class="modal-title">Dji Mavic Pro Bid History</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">Winner </div>
+                    <div class="col-md-4"><strong>0xea1fe34acab50d910785af697c6b221050622812</strong></div>
+
+                </div>
+                <div class="row">
+
+                    <br>
+                    Bid History:
+                    <br>
+                    <br>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+
+                    </div>
+                </div>
+
+            <row>
+
+
+                <ul class="list-group">
+                    <li class="list-group-item"><span class="badge">42</span> 15.87</li>
+                    <li class="list-group-item">13.38<span class="badge">2</span></li>
+                    <li class="list-group-item list-group-item-success">13.37<span class="badge">1</span></li>
+                    <li class="list-group-item">13.36<span class="badge">3</span></li>
+                    <li class="list-group-item">0.01<span class="badge">125</span></li>
+                </ul>
+
+
+            </row>
+                <row>
+                    <div class="col-md-12 text-center">
+                        <br>
+                        <br>
+                <button type="button" class="btn btn-success">Verify on Blockchain</button>
+
+                    </div>
+                </row>
+                <row>
+                    <div class="col-md-12 text-center">
+                    <label> Decryption seed: "xY8274$f!"</label>
+                    </div>
+                </roW>
+
+            </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="scripts/jquery-3.2.1.min.js"></script>
+
+<script src="scripts/web3.js"></script>
+<script src="bootstrap/js/bootstrap.js"></script>
+<script>
+    $( document ).ready(function() {
+        var localWeb3 = new Web3(window.web3.currentProvider)
+        getBalance("0xea1fe34acab50d910785af697c6b221050622812");
+
+        var countDownDate = new Date("Nov 27, 2018 17:37:25").getTime();
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+            // Get todays date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now an the count down date
+            var distance = countDownDate - now;
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            $('#hour').html(hours);
+            $('#minute').html(minutes);
+            $('#second').html(seconds);
+        }, 1000);
+
+
+
+
+        $('#sendButton').on('click', function (e) {
+            $('#exampleModal').modal('toggle');
+            sendToken();
+
+//            setTimeout(function() {
+//                $('#successModal').modal();
+//            }, 5000);
+            //your awesome code here
+
+        });
+        $('#showBids').on('click', function (e) {
+            $('#verifyModal').modal();
+        });
+
+    });
+
+
+    function getBalance (address) {
+        return web3.eth.getBalance(address, function (error, result) {
+            if (!error) {
+                var balance = result.toNumber();
+                console.log(balance);
+                var value = web3.fromWei(balance, 'ether');
+                console.log(value);
+                value = Math.floor(value);
+                $('#amountTokens').html(value);
+            } else {
+                console.error(error);
+            }
+        })
+    }
+    function sendToken() {
+        console.log('send');
+        web3.eth.sendTransaction({
+            from: '0xea1fe34acab50d910785af697c6b221050622812',
+            to: '0xd41be5485a7efa77a043532b2f1478714cfebbf5',
+            value: web3.toWei(1) //document.getElementById("amount").value, 'ether'
+        }, function(error, result) {
+            if (!error) {
+
+               setTimeout(function() {
+                   getBalance("0xea1fe34acab50d910785af697c6b221050622812");
+                   $('#successModal').modal();
+                }, 6000);
+
+                console.log('hellyeaah')
+
+            } else {
+                console.log('damn')
+            }
+        })
+
+    }
+
+
+//    $('#sendButton').on('click', function (e) {
+//        console.log('success');
+//        $('#exampleModal').modal('toggle');
+//        sendToken();
+        //your awesome code here
+
+
+//    });
+
+
+</script>
+
+<!--<div class="jumbotron text-center">-->
+    <!--<h1>iPhone <strong>X</strong></h1>-->
+
+    <!--<img src="Images/iphonex.png" height="378" width="471"/>-->
+    <!--<div>-->
+        <!--<button type="button" class="btn btn-outline-primary">Place Bid</button>-->
+
+        <!--<dl class="dl-horizontal" style="position: relative; top:20px;">-->
+            <!--<dt>Countdown</dt>-->
+            <!--<dd>10h 9m 10s</dd>-->
+            <!--<dt>Value</dt>-->
+            <!--<dd>$1579</dd>-->
+            <!--<dt>Minimum Bid:</dt>-->
+            <!--<dd>1 Token </dd>-->
+        <!--</dl>-->
+
+        <!--<br>-->
+        <!--&lt;!&ndash;<p id="Countdown">Time left: <strong>10h 9m 10s</strong></p>&ndash;&gt;-->
+        <!--&lt;!&ndash;<p>Value: $1579</p>&ndash;&gt;-->
+        <!--&lt;!&ndash;<p>Minimum bid: 1 Token</p>&ndash;&gt;-->
+    <!--</div>-->
+
+<!--</div>-->
+
+<!--<div class="container">-->
+    <!--<div class="row">-->
+        <!--<div class="col-sm-4">-->
+            <!--<h3>Column 1</h3>-->
+            <!--<p>Lorem ipsum dolor..</p>-->
+            <!--<p>Ut enim ad..</p>-->
+        <!--</div>-->
+        <!--<div class="col-sm-4">-->
+            <!--<h3>Column 2</h3>-->
+            <!--<p>Lorem ipsum dolor..</p>-->
+            <!--<p>Ut enim ad..</p>-->
+        <!--</div>-->
+        <!--<div class="col-sm-4">-->
+            <!--<h3>Column 3</h3>-->
+            <!--<p>Lorem ipsum dolor..</p>-->
+            <!--<p>Ut enim ad..</p>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+</body>
+</html>
