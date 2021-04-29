@@ -7,7 +7,9 @@ The goal of the Blockathon was to come up with a problem that could be addressed
 Our idea was to develop **OCTIO** a `lowest unique bid` auction website where the lowest unique bid would win the auction in comparison to a traditional auction system. 
 The problem with this sort of auctioning system is the verifiability of bids and that indeed the lowest unique bid has won and not the website provider (house).
 What might sound too good to be true (#scam) could now be verified transparently by everyone using a developed Ethereum smart contract. 
+
 ![Octio Logo](/Images/sold_mavic.png)
+
 If you're keen to find out more, have a look at our presentation that we presented to the judges:
 https://github.com/0x464c4f/OCTIO_BLOCKATHON/blob/master/Presentation/octio.pdf
 
